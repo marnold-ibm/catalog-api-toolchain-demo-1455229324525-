@@ -2,7 +2,7 @@
 var http = require('http');
 var db = require('./db');
 db.initDB();
-var USE_FASTCACHE = false;
+var USE_FASTCACHE = true;
 
 /*
  * To enable the load generator and 'improved' cache mechanism below:
