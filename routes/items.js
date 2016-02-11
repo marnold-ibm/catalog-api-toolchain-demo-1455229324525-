@@ -2,7 +2,7 @@
 var http = require('http');
 var db = require('./db');
 db.initDB();
-var USE_FASTCACHE = true;
+var USE_FASTCACHE = false;
 
 /*
  * To enable the load generator and 'improved' cache mechanism below:
@@ -10,8 +10,8 @@ var USE_FASTCACHE = true;
  * 2. uncomment the remaining method body
  */
 exports.loadTest = function(req, res) {
-    res.json({"success": 0, "fail": 0, "time": 0});
-/*
+ //   res.json({"success": 0, "fail": 0, "time": 0});
+
     USE_FASTCACHE = true;
     var testCount = req.query.count;
     testCount = testCount ? parseInt(testCount) : 100;
@@ -40,7 +40,7 @@ exports.loadTest = function(req, res) {
             path: "/items/" + (i % 2 ? itemId1 : itemId2)
 	}, callback);
     }
-*/
+
 };
 
 
